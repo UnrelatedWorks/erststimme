@@ -10,6 +10,11 @@ Wir glauben, dass es wichtig ist, mit den Abgeordneten, die uns vertreten, in Ko
 
 Unsere Website nutzt aktuell noch gar nichts, um die die Erststimmen nach Postleitzahlen zuordnet. Wir verwenden X, um die ID der Erststimme zu ermitteln, die zu Ihrer Postleitzahl passt. Dann leiten wir Sie an die entsprechende URL des Kontaktformulars des Bundestages weiter. Wir speichern oder senden keine Nachrichten über unsere Seite. Wir stellen nur eine Weiterleitung bereit.
 
+## Wer steckt dahinter?
+
+WirHelfen und das WirHelfen Magazin natürlich, wer sonst? 
+
+
 ## Wie kann ich mitmachen?
 
 Wenn Sie dieses Projekt unterstützen oder verbessern wollen, können Sie uns gerne einen Pull Request oder ein Issue auf GitHub schicken. Wir freuen uns über jede Art von Feedback oder Beitrag. Vielen Dank für Ihr Interesse an unserem Projekt. 😊
