@@ -1,6 +1,88 @@
 <html>
 <head>
+
     <style>
+		
+		body{
+			font-family: 'arial';
+		}
+		
+		#Textbox{
+			width: auto;
+			height: auto;
+		}
+		
+		#Texinhalt{
+			width: 90%;
+			height: auto;
+			text-align: center;
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		
+		#logoWirHelfen 
+		{
+		background-color: white;
+		width: 180px;
+		padding-right: 10px;
+		}
+		
+		#i{
+		text-align: center
+		}
+		
+		#div_huelle
+		{
+			width: auto;
+			height: auto;
+			margin-left: 500px;
+			margin-right: 500px;
+			display: block;
+		}
+		
+		#plz {
+			    float: left;
+				width: 80px;
+				height: 30px;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-top: 10px;
+				text-align: right;
+			    font-size: 20px;
+		}
+		
+	
+		#feld {
+			float: left;
+			width: 220px;
+			height: 40px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		
+		.satz{
+			padding-top: 5px;
+		}
+		
+		#infoBox{
+			width: 100%; 
+			padding: 5px; 
+			background-color: white; 
+			border: 2px solid #eee;
+			align: center;
+			text-align: center;
+			
+		}
+		
+		#Trennlinie{
+			background-color: #eee;
+		}
+		
+		#footer{
+			background-color: #eee;
+			margin-top: 100px;
+		}
+		
         h1 {
             font-size: 36px;
             text-align: center;
@@ -22,17 +104,47 @@
             width: 100px;
             height: 40px;
             font-size: 20px;
+			margin-top: 20px;
         }
+    #header_logo {
+		background-color: white;
+		margin-bottom:20px;
+}
+
     </style>
 </head>
 <body>
-    <h1>Prototyp! Die Webseite ist nur zur Darstellung, sie leitet immer an den gleichen Abgeordneten weiter</h1>
-    <h1>Kontaktiere deine Erststimme.</h1>
-    <p>Wir leiten dich an das offizielle Kontaktformular des Bundestages weiter.</p>
-    <p>Bitte sei in deiner Anfrage respektvoll. Auf der anderen Seite sitzt auch ein Mensch.</p>
-    <p>Ein Projekt des WirHelfen Magazines</p>
-    <input id="postcode" type="text" placeholder="PLZ" maxlength="5">
-    <button id="submit" onclick="submitForm()">Enter</button>
+<div id="header_logo"><img src="img/Logo.png" width="339" height="63" alt=""/></div>
+    <div id="Trennlinie">&nbsp;</div>
+    <div id="infoBox">
+     Prototyp! Die Webseite ist nur zur Darstellung, sie leitet immer an den gleichen Abgeordneten weiter
+	</div>
+	
+    <h1>Kontaktiere deine Erststimme</h1>
+	<div id="Textbox">
+		<div id="Texinhalt">
+			<p>Wenn du Kontakt mit dem Bundestag aufnehmen möchtest, leiten wir dich gerne zum offiziellen Kontaktformular weiter.
+				Bitte sei in deiner Anfrage stets respektvoll, denn auf der anderen Seite sitzt ebenfalls ein Mensch, der dir weiterhelfen möchte.</p>
+			<p>Vielen Dank für dein Verständnis und viel Erfolg bei deinem Anliegen!</p>
+			<p class="satz">
+				<p id="i">Ein Projekt vom Magazines</p>
+				<img id="logoWirHelfen" src="img/WirHelfen_logo.svg" alt="Logo von WirHelfen"/>
+			</p>
+		</div>
+	</div>
+					   
+    <! -- input class="postcode" type="text" placeholder="PLZ" maxlength="5" //-->
+	
+	
+		<div id="div_huelle">
+			<div id="plz">PLZ:</div>
+			<div id="feld"> <input type="text" plz="PLZ" maxlength="5"> </div>
+			<button id="submit" onclick="submitForm()">Enter</button> 
+		</div>
+   
+	<div id="footer">&nbsp;</div>
+
+											  
     <script>
         function submitForm() {
             var postcode = document.getElementById("postcode").value;
