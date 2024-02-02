@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      h1 {
+          font-size: 36px;
+          text-align: center;
+      }
+      p {
+          font-size: 24px;
+          text-align: center;
+      }
+      input {
+          display: block;
+          margin: 0 auto;
+          width: 200px;
+          height: 40px;
+          font-size: 20px;
+      }
+      button {
+          display: block;
+          margin: 0 auto;
+          width: 100px;
+          height: 40px;
+          font-size: 20px;
+      }
+  </style>
+</head>
+<body>
+    <input type="text" id="postcode" placeholder="Enter PLZ">
+    <button onclick="submitForm()">Submit</button>
+
+    <script>
+        // Function to read and parse the CSV file
+        async function loadCSV() {
+            const response = await fetch('plz2data_incomplete.csv');
+            const data = await response.text();
+            return data.split('\n').reduce((acc, line) => {
+                const [plz, dataId] = line.split(',');
+                acc[plz] = dataId;
+                return acc;
+            }, {});
+        }
+
+        // Map to store PLZ to Data-ID mappings
+        let plzMap = {};
+
+        // Load the CSV file and store the mappings
+        loadCSV().then(data => plzMap = data);
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>PLZ to Data-ID Redirect</title>
+        </head>
+        <body>
+            <input type="text" id="postcode" placeholder="Enter PLZ">
+            <button onclick="submitForm()">Submit</button>
+
+            <script>
+                // Function to read and parse the CSV file
+                async function loadCSV() {
+                    const response = await fetch('plz2data_incomplete.csv');
+                    const data = await response.text();
+                    return data.split('\n').reduce((acc, line) => {
+                        const [plz, dataId] = line.split(',');
+                        acc[plz] = dataId;
+                        return acc;
+                    }, {});
+                }
+
+                // Map to store PLZ to Data-ID mappings
+                let plzMap = {};
+
+                // Load the CSV file and store the mappings
+                loadCSV().then(data => plzMap = data);
+
+                // Function to handle form submission
+                function submitForm() {
+                    var postcode = document.getElementById("postcode").value;
+                    if (postcode.length == 5 && /^\d+$/.test(postcode)) {
+                        const dataId = plzMap[postcode];
+                        if (dataId) {
+                            window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=" + dataId;
+                        } else {
+                            alert("Data-ID not found for this PLZ.");
+                        }
+                    } else {
+                        alert("Bitte geben Sie eine gültige PLZ ein.");
+                    }
+                }
+            </script>
+        </body>
+        </html>
+
+        // Function to handle form submission
+        function submitForm() {
+            var postcode = document.getElementById("postcode").value;
+            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
+                const dataId = plzMap[postcode];
+                if (dataId) {
+                    window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=" + dataId;
+                } else {
+                    alert("Data-ID not found for this PLZ.");
+                }
+            } else {
+                alert("Bitte geben Sie eine gültige PLZ ein.");
+            }
+        }
+    </script>
+</body>
+</html>
