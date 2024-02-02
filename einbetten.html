@@ -1,42 +1,48 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        h1 {
-            font-size: 36px;
-            text-align: center;
-        }
-        p {
-            font-size: 24px;
-            text-align: center;
-        }
-        input {
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            height: 40px;
-            font-size: 20px;
-        }
-        button {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
-            height: 40px;
-            font-size: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
+<title>erststimme</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .form-container {
+    text-align: center;
+  }
+  input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 24px); 
+  }
+  button {
+    background-color: #bbbbbb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
 </head>
 <body>
-    <input id="postcode" type="text" placeholder="PLZ" maxlength="5">
-    <button id="submit" onclick="submitForm()">Test</button>
-    <script>
-        function submitForm() {
-            var postcode = document.getElementById("postcode").value;
-            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
-                window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=857470";
-            } else {
-                alert("Bitte geben Sie eine gültige PLZ ein.");
-            }
-        }
-    </script>
+
+<div class="form-container">
+  <input type="text" placeholder="PLZ">
+  <button onclick="window.open('https://www.bundestag.de/services/formular/contactform?mdbId=857470', '_blank')">Testen</button>
+</div>
+
 </body>
 </html>
