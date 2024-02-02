@@ -133,27 +133,11 @@
 		</div>
 	</div>
 					   
-    <! -- input class="postcode" type="text" placeholder="PLZ" maxlength="5" //-->
-	
-	
-		<div id="div_huelle">
-			<div id="plz">PLZ:</div>
-			<div id="feld"> <input type="text" plz="PLZ" maxlength="5"> </div>
-			<button id="submit" onclick="submitForm()">Enter</button> 
-		</div>
-   
-	<div id="footer">&nbsp;</div>
+<div class="form-container">
+  <input type="text" placeholder="PLZ">
+  <button onclick="window.open('https://www.bundestag.de/services/formular/contactform?mdbId=857470', '_blank')">Testen</button>
+</div>
 
-											  
-    <script>
-        function submitForm() {
-            var postcode = document.getElementById("postcode").value;
-            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
-                window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=857470";
-            } else {
-                alert("Bitte geben Sie eine gültige PLZ ein.");
-            }
-        }
-    </script>
+	
 </body>
 </html>
