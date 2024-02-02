@@ -1,0 +1,126 @@
+<html>
+<head>
+
+    <style>
+		
+		body{
+			font-family: 'arial';
+		}
+		
+		#Textbox{
+			width: auto;
+			height: auto;
+		}
+		
+		#Texinhalt{
+			width: 90%;
+			height: auto;
+			text-align: center;
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		
+		#logoWirHelfen 
+		{
+		background-color: white;
+		width: 180px;
+		padding-right: 10px;
+		}
+		
+		#i{
+		text-align: center
+		}
+		
+		#div_huelle
+		{
+			width: auto;
+			height: auto;
+			margin-left: 500px;
+			margin-right: 500px;
+			display: block;
+		}
+		
+		#plz {
+			    float: center;
+				width: 80px;
+				height: 30px;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-top: 10px;
+				text-align: right;
+			    font-size: 20px;
+		}
+		
+	
+		#feld {
+			float: left;
+			width: 220px;
+			height: 40px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		
+		.satz{
+			padding-top: 5px;
+		}
+		
+		#infoBox{
+			width: 100%; 
+			padding: 5px; 
+			background-color: white; 
+			border: 2px solid #eee;
+			align: center;
+			text-align: center;
+			
+		}
+		
+		#Trennlinie{
+			background-color: #eee;
+		}
+		
+		#footer{
+			background-color: #eee;
+			margin-top: 100px;
+		}
+		
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+        p {
+            font-size: 24px;
+            text-align: center;
+        }
+        input {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+            height: 40px;
+            font-size: 20px;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+            height: 40px;
+            font-size: 20px;
+			margin-top: 20px;
+        }
+    #header_logo {
+		background-color: white;
+		margin-bottom:20px;
+}
+
+    </style>
+</head>
+<body>
+
+					   
+<div class="form-container">
+  <input type="text" placeholder="PLZ">
+  <button onclick="window.open('https://www.bundestag.de/services/formular/contactform?mdbId=857470', '_blank')">Testen</button>
+</div>
+
+	
+</body>
+</html>
