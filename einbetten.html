@@ -1,45 +1,185 @@
-<!DOCTYPE html>
 <html>
 <head>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  .form-container {
-    text-align: center;
-  }
-  input[type="text"] {
-    padding: 10px;
-    margin-bottom: 20px; 
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: calc(100% - 24px); 
-  }
-  button {
-    background-color: #bbbbbb;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #0056b3;
-  }
-</style>
+
+    <style>
+		
+		body{
+			font-family: 'arial';
+		}
+		
+		#Textbox{
+			width: auto;
+			height: auto;
+		}
+		
+		#Texinhalt{
+			width: 90%;
+			height: auto;
+			text-align: center;
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		
+		#logoWirHelfen 
+		{
+		background-color: white;
+		width: 180px;
+		padding-right: 10px;
+		}
+		
+		#i{
+		text-align: center
+		}
+		
+		#div_huelle
+		{
+			
+			width: 40%;
+    		height: 20%;
+    		margin-left: 30%;
+			display: block;
+		}
+		
+		#plz {
+			    float: left;
+				width: 80px;
+				height: 30px;
+				padding-right: 20px;
+				padding-top: 10px;
+				text-align: right;
+			    font-size: 20px;
+		}
+		
+	
+		#feld {
+			float: left;
+			width: 220px;
+			height: 40px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		
+		.satz{
+			padding-top: 5px;
+		}
+		
+		#infoBox{
+			width: 100%; 
+			padding: 5px; 
+			background-color: white; 
+			border: 2px solid #eee;
+			align: center;
+			text-align: center;
+			
+		}
+		
+		#Trennlinie, #footer{
+			background-color: #276257;
+		}
+		
+		#footer{
+			margin-top: 3%;
+		}
+		
+        h1 {
+            font-size: 36px;
+            text-align: center;
+			margin-top: 40px;
+        }
+		
+        p {
+            font-size: 24px;
+            text-align: center;
+        }
+		
+        input {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+        }
+		
+        button {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+			margin-top: 20px;
+			position: relative;
+   	 		right: 60px;
+        }
+		
+		#header_logo {
+			background-color: white;
+			height: auto;
+			width: auto;
+		}
+		#headerlogo{
+			width: 180px;
+			height: 90px;
+			padding-top: 10px;
+		}
+		
+		#header_logo{
+			width: auto;
+			height: 100px;
+			background-image: url("img/moderne-glatte-glatte-kurve-der-abstrakten-weissen-und-grauen-futuristischen-technologie/1.jpg");
+			background-repeat: no-repeat;
+		}
+		
+		#Bild{
+			width: auto;
+			height: 100px;
+			padding-left: 30%;
+		}
+
+    </style>
 </head>
 <body>
+<div id="header_logo"><img id="headerlogo" src="img/WirHelfen_logo.svg" alt="WirHelfen Logoa"/>
+	<img id="Bild" src="img/wirHelfenBild.png" alt="WirHelfen Logoa"/>
+	</div>
+    <div id="Trennlinie">&nbsp;</div>
+    <div id="infoBox">
+     Prototyp! Die Webseite ist nur zur Darstellung, sie leitet immer an den gleichen Abgeordneten weiter
+	</div>
+	
+    <h1>Kontaktiere deine Erststimme</h1>
+	<div id="Textbox">
+		<div id="Texinhalt">
+			<p>Wenn du Kontakt mit dem Bundestag aufnehmen möchtest, leiten wir dich gerne zum offiziellen Kontaktformular weiter.
+				Bitte sei in deiner Anfrage stets respektvoll, denn auf der anderen Seite sitzt ebenfalls ein Mensch, der dir weiterhelfen möchte.</p>
+			<p>Vielen Dank für dein Verständnis und viel Erfolg bei deinem Anliegen!</p>
+			<p class="satz">
+				<p id="i">Ein Projekt vom Magazines</p>
+				<img id="logoWirHelfen" src="img/WirHelfen_logo.svg" alt="Logo von WirHelfen"/>
+			</p>
+		</div>
+	</div>
+					   
+    <! -- input class="postcode" type="text" placeholder="PLZ" maxlength="5" //-->
+	
+	
+		<div id="div_huelle">
+			<div id="plz">PLZ:</div>
+			<div id="feld"> <input type="text" plz="PLZ" maxlength="5"> </div>
+			<button id="submit" onclick="submitForm()">Enter</button> 
+		</div>
+   
+	<div id="footer">&nbsp;</div>
 
-<div class="form-container">
-  <input type="text" placeholder="PLZ">
-  <button onclick="window.open('https://www.bundestag.de/services/formular/contactform?mdbId=857470', '_blank')">Testen</button>
-</div>
-
+											  
+    <script>
+        function submitForm() {
+            var postcode = document.getElementById("postcode").value;
+            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
+                window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=857470";
+            } else {
+                alert("Bitte geben Sie eine gültige PLZ ein.");
+            }
+        }
+    </script>
 </body>
 </html>
