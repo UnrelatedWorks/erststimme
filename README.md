@@ -8,7 +8,7 @@ Wir glauben, dass es wichtig ist, mit den Abgeordneten, die uns vertreten, in Ko
 
 ## Wie funktioniert es?
 
-Unsere Website nutzt aktuell noch gar nichts, um die die Erststimmen nach Postleitzahlen zuordnet. Wir verwenden X, um die ID der Erststimme zu ermitteln, die zu Ihrer Postleitzahl passt. Dann leiten wir Sie an die entsprechende URL des Kontaktformulars des Bundestages weiter. Wir speichern oder senden keine Nachrichten über unsere Seite. Wir stellen nur eine Weiterleitung bereit.
+Unsere Website nutzt öffentliche Datenbanken, um die die Erststimmen nach Postleitzahlen zuzuordnen. Wir verwenden einen "look up table", um die ID der Erststimme zu ermitteln, die zu Ihrer Postleitzahl passt. Dann leiten wir Sie an die entsprechende URL des Kontaktformulars des Bundestages weiter. Wir speichern oder senden keine Nachrichten über unsere Seite. Wir stellen nur eine Weiterleitung bereit.
 
 ## Wer steckt dahinter?
 
