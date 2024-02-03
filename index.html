@@ -33,19 +33,18 @@
 		
 		#div_huelle
 		{
-			width: auto;
-			height: auto;
-			margin-left: 500px;
-			margin-right: 500px;
+			
+			width: 40%;
+    		height: 20%;
+    		margin-left: 30%;
 			display: block;
 		}
 		
 		#plz {
-			    float: center;
+			    float: left;
 				width: 80px;
 				height: 30px;
-				padding-left: 10px;
-				padding-right: 10px;
+				padding-right: 20px;
 				padding-top: 10px;
 				text-align: right;
 			    font-size: 20px;
@@ -74,23 +73,25 @@
 			
 		}
 		
-		#Trennlinie{
-			background-color: #eee;
+		#Trennlinie, #footer{
+			background-color: #276257;
 		}
 		
 		#footer{
-			background-color: #eee;
-			margin-top: 100px;
+			margin-top: 3%;
 		}
 		
         h1 {
             font-size: 36px;
             text-align: center;
+			margin-top: 40px;
         }
+		
         p {
             font-size: 24px;
             text-align: center;
         }
+		
         input {
             display: block;
             margin: 0 auto;
@@ -98,6 +99,7 @@
             height: 40px;
             font-size: 20px;
         }
+		
         button {
             display: block;
             margin: 0 auto;
@@ -105,16 +107,40 @@
             height: 40px;
             font-size: 20px;
 			margin-top: 20px;
+			position: relative;
+   	 		right: 60px;
         }
-    #header_logo {
-		background-color: white;
-		margin-bottom:20px;
-}
+		
+		#header_logo {
+			background-color: white;
+			height: auto;
+			width: auto;
+		}
+		#headerlogo{
+			width: 180px;
+			height: 90px;
+			padding-top: 10px;
+		}
+		
+		#header_logo{
+			width: auto;
+			height: 100px;
+			background-image: url("img/moderne-glatte-glatte-kurve-der-abstrakten-weissen-und-grauen-futuristischen-technologie/1.jpg");
+			background-repeat: no-repeat;
+		}
+		
+		#Bild{
+			width: auto;
+			height: 100px;
+			padding-left: 30%;
+		}
 
     </style>
 </head>
 <body>
-<div id="header_logo"><img src="https://raw.githubusercontent.com/UnrelatedWorks/erststimme/6e6f2578fd3b618f71d1b8e017bcb161721455d5/img/WirHelfen_logo.svg" width="339" height="63" alt=""/></div>
+<div id="header_logo"><img id="headerlogo" src="img/WirHelfen_logo.svg" alt="WirHelfen Logoa"/>
+	<img id="Bild" src="img/wirHelfenBild.png" alt="WirHelfen Logoa"/>
+	</div>
     <div id="Trennlinie">&nbsp;</div>
     <div id="infoBox">
      Prototyp! Die Webseite ist nur zur Darstellung, sie leitet immer an den gleichen Abgeordneten weiter
@@ -127,17 +153,33 @@
 				Bitte sei in deiner Anfrage stets respektvoll, denn auf der anderen Seite sitzt ebenfalls ein Mensch, der dir weiterhelfen möchte.</p>
 			<p>Vielen Dank für dein Verständnis und viel Erfolg bei deinem Anliegen!</p>
 			<p class="satz">
-				<p id="i">Ein Projekt des WirHelfen Magazines</p>
-				<img id="logoWirHelfen" src="https://github.com/UnrelatedWorks/erststimme/blob/main/img/magazinLogo.png?raw=true" alt="Logo von WirHelfen"/>
+				<p id="i">Ein Projekt vom Magazines</p>
+				<img id="logoWirHelfen" src="img/WirHelfen_logo.svg" alt="Logo von WirHelfen"/>
 			</p>
 		</div>
 	</div>
 					   
-<div class="form-container">
-  <input type="text" placeholder="PLZ">
-  <button onclick="window.open('https://www.bundestag.de/services/formular/contactform?mdbId=857470', '_blank')">Testen</button>
-</div>
-
+    <! -- input class="postcode" type="text" placeholder="PLZ" maxlength="5" //-->
 	
+	
+		<div id="div_huelle">
+			<div id="plz">PLZ:</div>
+			<div id="feld"> <input type="text" plz="PLZ" maxlength="5"> </div>
+			<button id="submit" onclick="submitForm()">Enter</button> 
+		</div>
+   
+	<div id="footer">&nbsp;</div>
+
+											  
+    <script>
+        function submitForm() {
+            var postcode = document.getElementById("postcode").value;
+            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
+                window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=857470";
+            } else {
+                alert("Bitte geben Sie eine gültige PLZ ein.");
+            }
+        }
+    </script>
 </body>
 </html>
