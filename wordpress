@@ -1,42 +1,23 @@
+<!-- Wordpress side implementation that gets the newest github einbetten. Wordpress does not need to be touched -->
+<!DOCTYPE html>
 <html>
 <head>
-    <style>
-        h1 {
-            font-size: 36px;
-            text-align: center;
-        }
-        p {
-            font-size: 24px;
-            text-align: center;
-        }
-        input {
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            height: 40px;
-            font-size: 20px;
-        }
-        button {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
-            height: 40px;
-            font-size: 20px;
-        }
-    </style>
+    <title>ErststimmeImNetz</title>
 </head>
 <body>
-    <input id="postcode" type="text" placeholder="PLZ" maxlength="5">
-    <button id="submit" onclick="submitForm()">Enter</button>
+    <div id="github-content"></div>
+
     <script>
-        function submitForm() {
-            var postcode = document.getElementById("postcode").value;
-            if (postcode.length == 5 && /^\d+$/.test(postcode)) {
-                window.location.href = "https://www.bundestag.de/services/formular/contactform?mdbId=857470";
-            } else {
-                alert("Bitte geben Sie eine gültige PLZ ein.");
-            }
-        }
+        //Der code ändert sich, das magazin bleibt gleich!
+        fetch('https://raw.githubusercontent.com/UnrelatedWorks/erststimme/main/einbetten2.html')
+            .then(response => response.text())
+            .then(htmlContent => {
+                // Insert the HTML content into the 'github-content' div
+                document.getElementById('github-content').innerHTML = htmlContent;
+            })
+            .catch(error => {
+                console.error('Error fetching GitHub HTML:', error);
+            });
     </script>
 </body>
 </html>
